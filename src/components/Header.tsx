@@ -22,7 +22,7 @@ const Header = () => {
     return (
         <div className="flex justify-between h-[80px] items-center mb-8 py-[20px] text-black/80">
             <Link to="/" className="font-bold">
-                <img src="../../public/logo.png" alt="" className="h-[55px]" />
+                <img src="/logo.png" alt="" className="h-[55px]" />
             </Link>
             {userLoged ? (
                 <nav className="flex items-center gap-4 text-[20px]">
