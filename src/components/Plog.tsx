@@ -1,30 +1,31 @@
-const Plog = () => {
+import { format } from "date-fns";
+import { Link } from "react-router-dom";
+
+const Plog = ({ title, createdAt, summary, auther, image, _id }: any) => {
     return (
-        <div className="flex gap-8 items-center">
-            <div className="flex-[0.8]">
+        <div className="flex gap-8 items-center flex-col md:flex-row">
+            <Link to={`/post/${_id}`} className="md:flex-[0.8]">
                 <img
-                    src="https://images.unsplash.com/photo-1621155346337-1d19476ba7d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    src={"http://localhost:4000/" + image}
                     alt=""
-                    className="rounded-lg"
+                    className="rounded-lg md:h-[300px] object-cover w-full md:w-[600px]"
                 />
-            </div>
-            <div className="flex-[1.2]">
+            </Link>
+            <Link to={`/post/${_id}`} className="md:flex-[1.2]">
                 <div className="my-[15px] font-semibold flex gap-4">
-                    <span>Auther</span>
-                    <span className="text-black/50">July 2, 2020</span>
+                    <span>{auther.userName}</span>
+                    <span className="text-black/50">
+                        {format(new Date(createdAt), "MMM d, yyyy HH:mm")}
+                    </span>
                 </div>
-                <h2 className="text-[40px] leading-[50px] font-semibold">
-                    Your most unhappy customers are your greatest source of
-                    learning.
-                </h2>
+                <div className="text-[35px] md:text-[40px] leading-[50px] font-semibold">
+                    {title}
+                </div>
 
                 <p className="mt-[10px] font-semibold text-[16px] text-black/50">
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts. Separated they live in Bookmarksgrove right at the
-                    coast of the Semantics, a large language ocean.
+                    {summary}
                 </p>
-            </div>
+            </Link>
         </div>
     );
 };
