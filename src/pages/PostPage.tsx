@@ -15,7 +15,9 @@ const PostPage = () => {
         const postfunc = async () => {
             try {
                 await axios
-                    .get(`http://localhost:4000/api/users/post/${postId}`)
+                    .get(
+                        `https://plog-app-api.onrender.com/api/users/post/${postId}`
+                    )
                     .then((req) => {
                         setPost(req.data.data);
                         setIsLoading(false);
@@ -26,7 +28,7 @@ const PostPage = () => {
 
             try {
                 await axios
-                    .post(`http://localhost:4000/api/users`, {
+                    .post(`https://plog-app-api.onrender.com/api/users`, {
                         token,
                     })
                     .then((req) => {
@@ -40,7 +42,9 @@ const PostPage = () => {
     }, []);
 
     const handleDelete = async () => {
-        await axios.delete(`http://localhost:4000/api/users/post/${postId}`);
+        await axios.delete(
+            `https://plog-app-api.onrender.com/api/users/post/${postId}`
+        );
     };
 
     if (isLoading) {

@@ -18,7 +18,7 @@ const Register = () => {
 
         try {
             const response = await axios.post(
-                "http://localhost:4000/api/users/register",
+                "https://plog-app-api.onrender.com/api/users/register",
                 userData
             );
             window.localStorage.setItem("token", response.data.data.token);

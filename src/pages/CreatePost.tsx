@@ -64,7 +64,11 @@ const CreatePost = () => {
 
         try {
             await axios
-                .post("http://localhost:4000/api/users/post", data, config)
+                .post(
+                    "https://plog-app-api.onrender.com/api/users/post",
+                    data,
+                    config
+                )
                 .then(() => {
                     setRedirect(true);
                 });

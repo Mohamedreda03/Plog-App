@@ -17,7 +17,10 @@ const Login = () => {
 
         try {
             await axios
-                .post("http://localhost:4000/api/users/login", userData)
+                .post(
+                    "https://plog-app-api.onrender.com/api/users/login",
+                    userData
+                )
                 .then((res) => {
                     window.localStorage.setItem("token", res.data.data.token);
                     setUserLoged(true);

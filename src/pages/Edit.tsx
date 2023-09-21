@@ -70,7 +70,10 @@ const Edit = () => {
 
         try {
             await axios
-                .patch(`http://localhost:4000/api/users/post/${postId}`, data)
+                .patch(
+                    `https://plog-app-api.onrender.com/api/users/post/${postId}`,
+                    data
+                )
                 .then(() => {
                     setRedirect(true);
                 });
@@ -83,7 +86,9 @@ const Edit = () => {
         const postfunc = async () => {
             try {
                 await axios
-                    .get(`http://localhost:4000/api/users/post/${postId}`)
+                    .get(
+                        `https://plog-app-api.onrender.com/api/users/post/${postId}`
+                    )
                     .then((response) => response.data.data)
                     .then((data) => {
                         setPost(data);

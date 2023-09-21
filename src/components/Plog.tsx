@@ -6,7 +6,7 @@ const Plog = ({ title, createdAt, summary, auther, image, _id }: any) => {
         <div className="flex gap-8 items-center flex-col md:flex-row">
             <Link to={`/post/${_id}`} className="md:flex-[0.8]">
                 <img
-                    src={"http://localhost:4000/" + image}
+                    src={"https://plog-app-api.onrender.com/" + image}
                     alt=""
                     className="rounded-lg md:h-[300px] object-cover w-full md:w-[600px]"
                 />

@@ -16,7 +16,10 @@ const Home = () => {
         const getAllPosts = async () => {
             try {
                 await axios
-                    .get("http://localhost:4000/api/users/post", config)
+                    .get(
+                        "https://plog-app-api.onrender.com/api/users/post",
+                        config
+                    )
                     .then((res) => {
                         setData(res.data);
                         setIsLoading(false);
