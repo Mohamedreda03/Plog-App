@@ -121,7 +121,7 @@ const PostPage = () => {
                 </h1>
                 <p className="text-[25px]">{post.summary}</p>
                 <img
-                    src={"http://localhost:4000/" + post.image}
+                    src={"https://plog-app-api.onrender.com/" + post.image}
                     alt=""
                     className="h-[500px] object-cover w-full rounded-xl my-9"
                 />
